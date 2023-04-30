@@ -35,7 +35,7 @@ bot.on("updateError", function (err) {
 });
 
 bot.on("synced", function () {
-  console.log("Bot ready.");
+  console.log("Bot running");
 });
 
 
@@ -188,7 +188,7 @@ bot.command("run", function (msg, reply, next) {
   if (msg.editor) msg.editor.detach();
   msg.editor = null;
 
-  console.log("Chat «%s»: running command «%s»", msg.chat.name, args);
+  //console.log("Chat «%s»: running command «%s»", msg.chat.name, args);
   msg.context.command = new Command(reply, msg.context, args);
   msg.context.command.on("exit", function() {
     msg.context.command = null;
